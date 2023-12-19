@@ -16,6 +16,10 @@ public class VeiculoDto {
 
     private Cor cor;
 
+    private String anoFabricacao;
+
+    private String anoModelo;
+
     public Veiculo toEntity(){
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(this, Veiculo.class);
