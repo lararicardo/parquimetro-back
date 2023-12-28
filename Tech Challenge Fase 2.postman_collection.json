@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "3cdfe583-751f-4ff8-a9bf-c797ac7e5da7",
+		"name": "Tech Challenge Fase 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16821045"
+	},
+	"item": [
+		{
+			"name": "Backend",
+			"item": [
+				{
+					"name": "Veiculo",
+					"item": [
+						{
+							"name": "Add Veiculo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"placa\":\"LGZ-7816\",\n    \"marca\":\"Volkswagen\",\n    \"modelo\":\"VIRTUS 1.0 200 TSI\",\n    \"cor\":\"PRETO\",\n    \"anoFabricacao\":\"2018\",\n    \"anoModelo\":\"2019\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/veiculos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"veiculos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getVeiculoByPlaca",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/veiculos/LGZ-7816",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"veiculos",
+										"LGZ-7816"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Veiculos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/veiculos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"veiculos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Veiculo",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"placa\":\"LGZ-7816\",\n    \"marca\":\"Volkswagen\",\n    \"modelo\":\"VIRTUS 1.0 200 TSI HIGHLINE\",\n    \"cor\":\"PRETO\",\n    \"anoFabricacao\":\"2018\",\n    \"anoModelo\":\"2019\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/veiculos/LGZ-7816",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"veiculos",
+										"LGZ-7816"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Veiculo",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/veiculos/LGZ-7816",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"veiculos",
+										"LGZ-7816"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllCores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/veiculos/cores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"veiculos",
+										"cores"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Condutor",
+					"item": [
+						{
+							"name": "Add Condutor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nomeCompleto\":\"Ricardo Lara\",\n    \"email\":\"ricardolara.ti@gmail.com\",\n    \"cpf\":\"412.138.278-17\",\n    \"celular\":\"(15) 99611-3683\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/condutores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"condutores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Condutores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/condutores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"condutores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Condutor",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"nomeCompleto\": \"Ricardo Lara TESTE TESTE\",\n    \"email\": \"ricardolara.ti@gmail.com\",\n    \"cpf\": \"412.138.278-17\",\n    \"celular\": \"(15) 99611-3683\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/condutores/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"condutores",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Veiculo",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/condutores/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"condutores",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

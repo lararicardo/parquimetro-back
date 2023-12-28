@@ -22,7 +22,7 @@ public class Veiculo {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false, length = 7)
+    @Column(nullable = false, length = 10)
     @NotNull(value = "A Placa não foi preenchida")
     private String placa;
 
