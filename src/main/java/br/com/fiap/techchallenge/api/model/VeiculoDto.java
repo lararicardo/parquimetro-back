@@ -8,6 +8,8 @@ import org.modelmapper.ModelMapper;
 @Data
 public class VeiculoDto {
 
+    private Long id;
+
     private String placa;
 
     private String marca;

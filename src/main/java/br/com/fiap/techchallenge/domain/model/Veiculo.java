@@ -3,6 +3,8 @@ package br.com.fiap.techchallenge.domain.model;
 import br.com.fiap.techchallenge.domain.enums.Cor;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.jetbrains.annotations.NotNull;
@@ -11,11 +13,17 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class Veiculo {
 
-    @Column(nullable = false, length = 8)
     @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(nullable = false, length = 7)
+    @NotNull(value = "A Placa não foi preenchida")
     private String placa;
 
     @Column(nullable = false, length = 60)
@@ -37,7 +45,12 @@ public class Veiculo {
     private String anoModelo;
 
     @Column
-    @JsonFormat(pattern="dd/MM/yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private final LocalDateTime dataCadastro = LocalDateTime.now();
+
+    @PrePersist
+    public void prePersist() {
+        this.setPlaca(this.getPlaca().toUpperCase());
+    }
 
 }

@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 @Getter
@@ -26,9 +24,6 @@ public enum Cor {
 
     private final String nome;
 
-    public List<Cor> getCores(){
-        return Arrays.stream(Cor.values()).toList();
-    }
 
     @JsonCreator
     public static Cor fromString(String value) {

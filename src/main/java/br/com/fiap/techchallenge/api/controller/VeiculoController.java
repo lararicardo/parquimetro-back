@@ -1,6 +1,7 @@
 package br.com.fiap.techchallenge.api.controller;
 
 import br.com.fiap.techchallenge.api.model.VeiculoDto;
+import br.com.fiap.techchallenge.domain.enums.Cor;
 import br.com.fiap.techchallenge.domain.model.Veiculo;
 import br.com.fiap.techchallenge.domain.service.VeiculoService;
 import org.jetbrains.annotations.NotNull;
@@ -24,8 +25,8 @@ public class VeiculoController {
     }
 
     @GetMapping("/{placa}")
-    public Veiculo getVeiculoPorPlaca(@PathVariable("placa") String placa) {
-        return veiculoService.getVeiculoPorPlaca(placa);
+    public Veiculo getVeiculoByPlaca(@PathVariable String placa) {
+        return veiculoService.getVeiculoByPlaca(placa);
     }
 
     @PostMapping
@@ -34,15 +35,19 @@ public class VeiculoController {
          return veiculoService.add(veiculoDto.toEntity());
     }
 
-    @PutMapping("/{placa}")
-    public Veiculo update(@RequestBody @NotNull VeiculoDto veiculoDto, @PathVariable("placa") String placa){
-        return veiculoService.update(veiculoDto.toEntity());
+    @PutMapping("/{id}")
+    public Veiculo update(@RequestBody @NotNull VeiculoDto veiculoDto, @PathVariable("id") Long id){
+        return veiculoService.update(veiculoDto.toEntity(), id);
     }
 
-    @DeleteMapping("/{placa}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete (@PathVariable("placa") String placa){
-        veiculoService.delete(placa);
+    public void delete (@PathVariable("id") Long id){
+        veiculoService.delete(id);
     }
 
+    @GetMapping("/cores")
+    public Cor[] getAllCores(){
+        return Cor.values();
+    }
 }
