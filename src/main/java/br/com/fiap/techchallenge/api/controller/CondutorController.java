@@ -1,9 +1,6 @@
 package br.com.fiap.techchallenge.api.controller;
 
-import br.com.fiap.techchallenge.api.model.VeiculoDto;
-import br.com.fiap.techchallenge.domain.enums.Cor;
 import br.com.fiap.techchallenge.domain.model.Condutor;
-import br.com.fiap.techchallenge.domain.model.Veiculo;
 import br.com.fiap.techchallenge.domain.service.CondutorService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;

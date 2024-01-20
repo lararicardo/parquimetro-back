@@ -83,6 +83,24 @@ public class VeiculoService {
                 .cor(Cor.VERMELHO)
                 .build());
 
+        veiculos.add(Veiculo.builder()
+                .placa("LYH3E12")
+                .marca("Volks")
+                .modelo("Nivus")
+                .anoFabricacao("2023")
+                .anoModelo("2024")
+                .cor(Cor.CINZA)
+                .build());
+
+        veiculos.add(Veiculo.builder()
+                .placa("CQW7O63")
+                .marca("Toyota")
+                .modelo("Toyota Cross")
+                .anoFabricacao("2020")
+                .anoModelo("2020")
+                .cor(Cor.BRANCO)
+                .build());
+
         veiculoRepository.saveAll(veiculos);
     }
 }

@@ -43,4 +43,24 @@ public class CondutorService {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Condutor não existe na base de dados");
         }
     }
+
+    @PostConstruct()
+    private void criarDadosNoDB(){
+        List<Condutor> condutores = new ArrayList<>();
+        condutores.add(Condutor.builder()
+                .nomeCompleto("Ricardo Rafael Lara Gomes")
+                .email("ricardolara123@gmail.com")
+                .cpf("226.166.230-05")
+                .celular("(15) 99611-3333")
+                .build());
+
+        condutores.add(Condutor.builder()
+                .nomeCompleto("Fulano da Silva")
+                .email("fulano.dasilva@gmail.com")
+                .cpf("005.322.150-87")
+                .celular("(15) 88622-3333")
+                .build());
+
+        condutorRepository.saveAll(condutores);
+    }
 }
