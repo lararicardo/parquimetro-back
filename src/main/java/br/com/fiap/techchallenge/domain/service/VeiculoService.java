@@ -22,10 +22,8 @@ public class VeiculoService {
         return veiculoRepository.findAll();
     }
 
-    public Veiculo getVeiculoByPlaca(String placa){
-        return veiculoRepository
-                .findByPlaca(placa.toUpperCase())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Veículo não encontrado"));
+    public List<Veiculo> getVeiculoByPlaca(String placa){
+        return veiculoRepository.findByPlacaIgnoreCaseContaining(placa.toUpperCase());
     }
 
     public Veiculo add(Veiculo veiculo) {

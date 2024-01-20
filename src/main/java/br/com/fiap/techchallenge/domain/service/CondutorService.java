@@ -1,6 +1,5 @@
 package br.com.fiap.techchallenge.domain.service;
 
-import br.com.fiap.techchallenge.domain.enums.Cor;
 import br.com.fiap.techchallenge.domain.model.Condutor;
 import br.com.fiap.techchallenge.domain.model.Veiculo;
 import br.com.fiap.techchallenge.domain.repository.CondutorRepository;
@@ -42,6 +41,10 @@ public class CondutorService {
         }else{
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Condutor não existe na base de dados");
         }
+    }
+
+    public List<Condutor> getCondutorByNomeCompleto(String nomeCompleto){
+        return condutorRepository.findByNomeCompletoIgnoreCaseContaining(nomeCompleto);
     }
 
     @PostConstruct()

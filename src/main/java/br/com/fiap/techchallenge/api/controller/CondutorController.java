@@ -22,6 +22,11 @@ public class CondutorController {
         return condutorService.getAll();
     }
 
+    @GetMapping("/{nomeCompleto}")
+    public List<Condutor> getCondutorByNomeCompleto(@PathVariable String nomeCompleto) {
+        return condutorService.getCondutorByNomeCompleto(nomeCompleto);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Condutor add(@RequestBody @NotNull Condutor condutor) {
