@@ -1,15 +1,12 @@
 package br.com.fiap.techchallenge.domain.service;
 
-import br.com.fiap.techchallenge.domain.enums.Cor;
 import br.com.fiap.techchallenge.domain.model.Veiculo;
 import br.com.fiap.techchallenge.domain.repository.VeiculoRepository;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,10 +19,8 @@ public class VeiculoService {
         return veiculoRepository.findAll();
     }
 
-    public Veiculo getVeiculoByPlaca(String placa){
-        return veiculoRepository
-                .findByPlaca(placa.toUpperCase())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Veículo não encontrado"));
+    public List<Veiculo> getVeiculoByPlaca(String placa){
+        return veiculoRepository.findByPlacaIgnoreCaseContaining(placa.toUpperCase());
     }
 
     public Veiculo add(Veiculo veiculo) {
@@ -53,36 +48,7 @@ public class VeiculoService {
         }
     }
 
-    @PostConstruct
-    private void criarDadosNoDB(){
-        List<Veiculo> veiculos = new ArrayList<>();
-        veiculos.add(Veiculo.builder()
-                .placa("QPA3D88")
-                .marca("Volks")
-                .modelo("Virtus")
-                .anoFabricacao("2011")
-                .anoModelo("2012")
-                .cor(Cor.PRETO)
-                .build());
-
-        veiculos.add(Veiculo.builder()
-                .placa("IED6C44")
-                .marca("Ford")
-                .modelo("Fiesta")
-                .anoFabricacao("2022")
-                .anoModelo("2023")
-                .cor(Cor.AMARELO)
-                .build());
-
-        veiculos.add(Veiculo.builder()
-                .placa("NUC7I02")
-                .marca("Fiat")
-                .modelo("Palio")
-                .anoFabricacao("2015")
-                .anoModelo("2015")
-                .cor(Cor.VERMELHO)
-                .build());
-
-        veiculoRepository.saveAll(veiculos);
+    public void saveAll(List<Veiculo> lista){
+        veiculoRepository.saveAll(lista);
     }
 }

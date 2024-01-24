@@ -1,5 +1,6 @@
 package br.com.fiap.techchallenge.api.model;
 
+import br.com.fiap.techchallenge.domain.enums.DataHora;
 import br.com.fiap.techchallenge.domain.model.Condutor;
 import br.com.fiap.techchallenge.domain.model.Tempo;
 import br.com.fiap.techchallenge.domain.model.Veiculo;
@@ -20,7 +21,7 @@ public class TempoDTO {
     private Long id;
     private List<Condutor> condutores;
     private List<Veiculo> veiculos;
-    private final LocalTime tempoRegistrado;
+    private final List<DataHora> tempoRegistrado;
 
     public Tempo toEntity(){
         ModelMapper modelMapper = new ModelMapper();

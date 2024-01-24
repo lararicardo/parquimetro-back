@@ -29,11 +29,11 @@ public class TempoController {
     @GetMapping("/cadastro")
     public List<ControleTempoDTO> getListaDeTempos() {
         return Arrays.asList(
-                new ControleTempoDTO(DataHora.AUTOMATICO.getName(), DataHora.AUTOMATICO.getFormatter().toString(), DataHora.AUTOMATICO.getValue(), null),
-                new ControleTempoDTO(DataHora.HORA_1.getName(), DataHora.HORA_1.getFormatter().toString(), DataHora.HORA_1.getValue(), DataHora.HORA_1.getHora()),
-                new ControleTempoDTO(DataHora.HORA_2.getName(), DataHora.HORA_2.getFormatter().toString(), DataHora.HORA_2.getValue(), DataHora.HORA_2.getHora()),
-                new ControleTempoDTO(DataHora.HORA_3.getName(), DataHora.HORA_3.getFormatter().toString(), DataHora.HORA_3.getValue(), DataHora.HORA_3.getHora()),
-                new ControleTempoDTO(DataHora.HORA_4.getName(), DataHora.HORA_4.getFormatter().toString(), DataHora.HORA_4.getValue(), DataHora.HORA_4.getHora())
+                new ControleTempoDTO(DataHora.AUTOMATICO.getName()),
+                new ControleTempoDTO(DataHora.HORA_1.getName()),
+                new ControleTempoDTO(DataHora.HORA_2.getName()),
+                new ControleTempoDTO(DataHora.HORA_3.getName()),
+                new ControleTempoDTO(DataHora.HORA_4.getName())
         );
     }
 

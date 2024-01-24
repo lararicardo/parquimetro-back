@@ -16,6 +16,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -45,16 +46,4 @@ public class TempoService {
         }
     }
 
-    @PostConstruct
-    private void criarDadosNoDB(){
-        List<Tempo> tempos = new ArrayList<>();
-        List<Veiculo> veiculos = veiculoRepository.findAll();
-        List<Condutor> Condutores = condutorRepository.findAll();
-        tempos.add(Tempo.builder()
-                .condutor(Condutores)
-                .veiculos(veiculos)
-                .tempoRegistrado(DataHora.HORA_1)
-                .build());
-        tempoRepository.saveAll(tempos);
-    }
 }

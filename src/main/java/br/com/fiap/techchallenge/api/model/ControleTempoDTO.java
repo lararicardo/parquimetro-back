@@ -1,21 +1,22 @@
 package br.com.fiap.techchallenge.api.model;
 
+import br.com.fiap.techchallenge.domain.enums.DataHora;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 @Data
 public class ControleTempoDTO {
 
     private String name;
-    private String formatterPattern;
-    private String automaticoValue;
-    private LocalTime hora;
+    private String value;
+    private String valuetwo;
+    private String valuethree;
+    private int atualiza;
 
-    public ControleTempoDTO(String name, String formatterPattern, String automaticoValue, LocalTime hora) {
+    public ControleTempoDTO(String name) {
         this.name = name;
-        this.formatterPattern = formatterPattern;
-        this.automaticoValue = automaticoValue;
-        this.hora = hora;
+        this.value = DataHora.fromString(name);
     }
 }

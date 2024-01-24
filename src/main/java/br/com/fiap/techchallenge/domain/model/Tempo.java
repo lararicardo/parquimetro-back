@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -21,13 +21,28 @@ public class Tempo {
     @GeneratedValue
     private Long id;
 
-    @OneToMany
-    private List<Condutor> condutor;
-    @OneToMany
-    private List<Veiculo> veiculos;
+    @Column(name = "condutor")
+    private Long condutor;
 
-    @Column
-    @Enumerated(EnumType.STRING) // Adicione esta anotação
-    private DataHora tempoRegistrado = DataHora.HORA_1;
+    @Column(name = "veiculo")
+    private Long veiculo;
+
+    @Column(name = "tempoRegistrado")
+    private String tempoRegistrado;
+
+    @Column(name = "dateTimeRegistrado")
+    @JsonFormat(pattern = "dd/MM/yyyy HH'h':mm'm':ss's'")
+    private LocalDateTime dateTimeRegistrado;
+
+    @Column(name = "dataHoraInserido")
+    @JsonFormat(pattern = "dd/MM/yyyy HH'h':mm'm':ss's'")
+    private LocalDateTime dataHoraInserido;
+
+    @Column(name = "dataHoraFinalizado")
+    @JsonFormat(pattern = "dd/MM/yyyy HH'h':mm'm':ss's'")
+    private LocalDateTime dataHoraFinalizado;
+
+    @Column(name = "atualizacoes")
+    private int atualizacoes;
 
 }
