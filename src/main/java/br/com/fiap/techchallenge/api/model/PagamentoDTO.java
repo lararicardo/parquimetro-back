@@ -13,7 +13,6 @@ public class PagamentoDTO {
     private FormaPagamento formaPagamento;
     private int horaInicio;
     private int horaFim;
-    private int atualizacoes;
 
      public Pagamento toEntity(){
         ModelMapper modelMapper = new ModelMapper();

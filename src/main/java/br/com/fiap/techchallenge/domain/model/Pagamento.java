@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.com.fiap.techchallenge.domain.enums.FormaPagamento;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,8 +33,7 @@ public class Pagamento {
     @JsonFormat(pattern = "dd/MM/yyyy HH'h':mm'm':ss's'")
     private LocalDateTime dataHoraFim;
 
-    @Column(name = "atualizacoes")
-    private int atualizacoes;
-
+    @Column(name = "formaPagamento")
+    private FormaPagamento formaPagamento;
     
 }
