@@ -25,7 +25,7 @@ public class VeiculoController {
     }
 
     @GetMapping("/{placa}")
-    public Veiculo getVeiculoByPlaca(@PathVariable String placa) {
+    public List<Veiculo> getVeiculoByPlaca(@PathVariable String placa) {
         return veiculoService.getVeiculoByPlaca(placa);
     }
 
