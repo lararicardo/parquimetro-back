@@ -49,4 +49,10 @@ public class TempoController {
         return tempoService.update(tempo, id);
     }
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete (@PathVariable("id") Long id){
+        tempoService.delete(id);
+    }
+
 }
