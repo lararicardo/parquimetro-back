@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.fiap.techchallenge.api.model.PagamentoDTO;
 import br.com.fiap.techchallenge.domain.enums.FormaPagamento;
 import br.com.fiap.techchallenge.domain.model.Pagamento;
 import br.com.fiap.techchallenge.domain.service.PagamentoService;
@@ -37,8 +38,8 @@ public class PagamentoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Pagamento add(@RequestBody @NotNull Pagamento pagamento) {
-        return pagamentoService.add(pagamento);
+    public Pagamento add(@RequestBody @NotNull PagamentoDTO pagamentoDTO) {
+        return pagamentoService.add(pagamentoDTO.toEntity());
     }
      
 }
