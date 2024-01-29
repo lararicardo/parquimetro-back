@@ -11,8 +11,8 @@ public class PagamentoDTO {
     
     private Long id;
     private FormaPagamento formaPagamento;
-    private int horaInicio;
-    private int horaFim;
+    private int tempoUtilizado;
+    private int valorPago;
 
      public Pagamento toEntity(){
         ModelMapper modelMapper = new ModelMapper();

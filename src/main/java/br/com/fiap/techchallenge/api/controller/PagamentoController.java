@@ -19,8 +19,8 @@ import br.com.fiap.techchallenge.domain.model.Pagamento;
 import br.com.fiap.techchallenge.domain.service.PagamentoService;
 
 @RestController
-@RequestMapping("api/pagamentos")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api/pagamentos")
+@CrossOrigin(origins = "*")
 public class PagamentoController {
 
     @Autowired

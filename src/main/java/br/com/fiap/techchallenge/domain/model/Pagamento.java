@@ -25,13 +25,11 @@ public class Pagamento {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "dataHoraInicio")
-    @JsonFormat(pattern = "dd/MM/yyyy HH'h':mm'm':ss's'")
-    private LocalDateTime dataHoraInicio;
+    @Column(name = "tempoUtilizado")
+    private Integer tempoUtilizado;
 
-    @Column(name = "dataHoraFim")
-    @JsonFormat(pattern = "dd/MM/yyyy HH'h':mm'm':ss's'")
-    private LocalDateTime dataHoraFim;
+    @Column(name = "valorPago")
+    private Double valorPago;
 
     @Column(name = "formaPagamento")
     private FormaPagamento formaPagamento;
