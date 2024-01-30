@@ -18,3 +18,10 @@ mvn spring-boot:run </br> </br>
 ```
 https://github.com/lararicardo/parquimetro-front
 ```
+
+<b>Documentação Swagger</b></br>
+```
+swagger-ui/index.html
+```
+
+
