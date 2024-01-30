@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tempos")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TempoController {
 
     @Autowired
@@ -49,4 +49,10 @@ public class TempoController {
         return tempoService.update(tempo, id);
     }
 
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete (@PathVariable("id") Long id){
+        tempoService.delete(id);
+    }
 }

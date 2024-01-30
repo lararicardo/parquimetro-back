@@ -46,4 +46,12 @@ public class TempoService {
         }
     }
 
+    public void delete(Long id) {
+        var tempo = tempoRepository.findById(id);
+        if (tempo.isPresent()){
+            tempoRepository.delete(tempo.get());
+        }else{
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Tempo não existe na base de dados");
+        }
+    }
 }
