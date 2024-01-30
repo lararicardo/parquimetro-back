@@ -23,5 +23,3 @@ https://github.com/lararicardo/parquimetro-front
 ```
 swagger-ui/index.html
 ```
-
-
