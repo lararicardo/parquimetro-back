@@ -18,9 +18,9 @@ public class PagamentoDTO {
     private FormaPagamento formaPagamento;
     private int tempoUtilizado;
     private int valorPago;
-    private List<Condutor> condutores;
-    private List<Veiculo> veiculos;
-    private List<Tempo> tempos;
+    private int condutorId;
+    private int veiculoId;
+    private int tempoId;
 
 
      public Pagamento toEntity(){
