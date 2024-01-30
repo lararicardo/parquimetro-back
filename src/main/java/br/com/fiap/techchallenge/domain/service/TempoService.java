@@ -54,5 +54,4 @@ public class TempoService {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Tempo não existe na base de dados");
         }
     }
-
 }
