@@ -30,12 +30,6 @@ public class Pagamento {
     @Column(name = "formaPagamento")
     private FormaPagamento formaPagamento;
     
-    @Column(name = "condutor")
-    private Long condutorId;
-
-    @Column(name = "veiculo")
-    private Long veiculoId;
-    
     @Column(name = "tempo")
     private Long tempoId;
 }
