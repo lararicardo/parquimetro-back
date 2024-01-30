@@ -1,9 +1,5 @@
 package br.com.fiap.techchallenge.domain.model;
 
-import java.time.LocalDateTime;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import br.com.fiap.techchallenge.domain.enums.FormaPagamento;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,4 +30,12 @@ public class Pagamento {
     @Column(name = "formaPagamento")
     private FormaPagamento formaPagamento;
     
+    @Column(name = "condutor")
+    private Long condutorId;
+
+    @Column(name = "veiculo")
+    private Long veiculoId;
+    
+    @Column(name = "tempo")
+    private Long tempoId;
 }

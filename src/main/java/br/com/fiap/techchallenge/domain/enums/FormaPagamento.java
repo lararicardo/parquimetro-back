@@ -12,8 +12,8 @@ import lombok.Getter;
 public enum FormaPagamento {
 
     PIX ("Pix"),
-    CARTAODECREDITO ("Cartão de Crédito"),
-    CARTAODEDEBITO ("Cartão de Débito");
+    CARTAODECREDITO ("CartaoDeCredito"),
+    CARTAODEDEBITO ("CartaoDeDebito");
 
     private final String nome;
 
